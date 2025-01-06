@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XCrypto</title>
     <link rel="stylesheet" href="https://laftonexchange.github.io/xcrypto/articles/static/article.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let WebApp = window.Telegram.WebApp;
+        let BackButton = WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            BackButton.hide();
+        });
+        WebApp.onEvent('backButtonClicked', function() {
+            window.history.back();
+        });
+    </script>
+
 </head>
 <body class="dark-theme">
     <header>Рекомендации по картам</header>
@@ -82,19 +95,5 @@
     <footer>
         <p>&copy; 2025 XCrypto by LaFTon</p>
     </footer>
-
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <script>
-        let WebApp = window.Telegram.WebApp;
-        let BackButton = WebApp.BackButton;
-        BackButton.show();
-        BackButton.onClick(function() {
-            BackButton.hide();
-        });
-        WebApp.onEvent('backButtonClicked', function() {
-            window.history.back();
-        });
-    </script>
-
 </body>
 </html>
