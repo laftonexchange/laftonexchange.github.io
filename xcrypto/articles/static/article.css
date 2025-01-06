@@ -140,23 +140,6 @@ footer {
             color: #ff0080;
         }
 
-        blockquote {
-            margin: 10px 0;
-            padding: 10px 15px;
-            background: #333;
-            border-left: 5px solid #00bfff;
-            color: #ccc;
-            font-style: italic;
-            font-size: 1em;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #555;
-        }
-
         /* Keyframes for animations */
         @keyframes backgroundShift {
             0% {
