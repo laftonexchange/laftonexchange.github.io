@@ -47,6 +47,18 @@
             padding: 15px;
         }
     </style>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let WebApp = window.Telegram.WebApp;
+        let BackButton = WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            BackButton.hide();
+        });
+        WebApp.onEvent('backButtonClicked', function() {
+            window.history.back();
+        });
+    </script>
 </head>
 <body class="dark-theme">
     <header>МТС Деньги/Банк</header>
@@ -106,19 +118,6 @@
     <footer>
         <p>&copy; 2025 XCrypto by LaFTon</p>
     </footer>
-
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <script>
-        let WebApp = window.Telegram.WebApp;
-        let BackButton = WebApp.BackButton;
-        BackButton.show();
-        BackButton.onClick(function() {
-            BackButton.hide();
-        });
-        WebApp.onEvent('backButtonClicked', function() {
-            window.history.back();
-        });
-    </script>
     <script>
         document.querySelector('.spoiler-button').addEventListener('click', function() {
             const spoiler = document.querySelector('.spoiler');
