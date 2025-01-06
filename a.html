@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Style Articles</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #000, #111 40%, #222 70%);
+            background-size: 400% 400%;
+            color: #ccc;
+            animation: backgroundShift 10s infinite;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00bfff, #6a0dad, #ff0080);
+            background-size: 200% 200%;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            text-shadow:
+                0 0 5px #00bfff,
+                0 0 10px #00bfff,
+                0 0 20px #6a0dad,
+                0 0 30px #ff0080,
+                0 0 40px #ffffff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #6a0dad;
+            animation: headerGlow 5s infinite linear;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: calc(100% - 60px); /* Учитываем отступы */
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background: #222;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .article-list li {
+            border-bottom: 1px solid #333;
+        }
+
+        .article-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article-link {
+            display: block;
+            text-decoration: none;
+            color: #00bfff;
+            padding: 15px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .article-link:hover {
+            background-color: #333;
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #00bfff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Keyframes for animations */
+        @keyframes backgroundShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes headerGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Responsive design for small screens */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.8em;
+                padding: 10px 30px;
+            }
+
+            .container {
+                width: calc(100% - 60px); /* Сохраняем отступы */
+                margin: 10px auto;
+            }
+
+            .article-link {
+                font-size: 1em;
+                padding: 10px;
+            }
+
+            footer {
+                font-size: 0.8em;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>XCrypto</header>
+    <div class="container">
+        <ul class="article-list">
+            <li><a href="/article1.html" class="article-link">Банк - факт</a></li>
+            <li><a href="/article2.html" class="article-link">Сбербанк</a></li>
+            <li><a href="/article3.html" class="article-link">Райффайзен Банк</a></li>
+            <li><a href="/article4.html" class="article-link">МТС Деньги/Банк</a></li>
+            <li><a href="/article5.html" class="article-link">Безопасность во время сделки</a></li>
+            <li><a href="/article6.html" class="article-link">Альфа Банк</a></li>
+            <li><a href="/article7.html" class="article-link">Альфа Банк: мануал для вывода</a></li>
+            <li><a href="/article8.html" class="article-link">Яндекс Pay</a></li>
+            <li><a href="/article9.html" class="article-link">Банк Уралсиб</a></li>
+            <li><a href="/article10.html" class="article-link">Т-Банк (Тинькофф Банк)</a></li>
+            <li><a href="/article11.html" class="article-link">Т-Банк УКБО</a></li>
+            <li><a href="/article12.html" class="article-link">Т-Банк: вывод денежных средств при УКБО</a></li>
+            <li><a href="/article13.html" class="article-link">Как платить налоги?</a></li>
+            <li><a href="/article14.html" class="article-link">Как выбрать дропа?</a></li>
+        </ul>
+    </div>
+    <footer>
+        &copy; 2025 XCrypto by LaFTon.
+    </footer>
+</body>
+</html>
