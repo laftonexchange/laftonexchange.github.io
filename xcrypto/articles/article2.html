@@ -12,18 +12,6 @@
             color: #f9e4ed;
         }
     </style>
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <script>
-        let WebApp = window.Telegram.WebApp;
-        let BackButton = WebApp.BackButton;
-        BackButton.show();
-        BackButton.onClick(function() {
-            BackButton.hide();
-        });
-        WebApp.onEvent('backButtonClicked', function() {
-            window.location.href = "https://laftonexchange.github.io/xcrypto/main.html";
-        });
-    </script>
 </head>
 <body class="dark-theme">
     <header>Сбербанк</header>
@@ -106,19 +94,21 @@
         <p>Снимать деньги только через отделение банка, дистанционно не получится.</p>
 
         <p class="important"><b><i>3. Серая блокировка.</i></b></p>
+        <p>Приостанавливается операция и необходимо дождаться звонка из банка (900).</p>
         <blockquote>
-            Приостанавливается операция и необходимо дождаться звонка из банка (900).
+            Звонит голосовой помощник «Афина» и просит подтверждение операции. После этого перевод будет отправлен
         </blockquote>
 
         <p class="important"><b><i>4. Красная блокировка.</i></b></p>
+        <p>Вас выкидывает из ЛК и звонит уже живой сотрудник Сбербанка.</p>
         <blockquote><b>Если вы допускаете ошибки, то вам нужно будет идти в отделение банка и писать заявление на разблокировку.</b></blockquote>
         <br>
         <div class="card-section">
             <b>Факты и Инфа</b>
         </div>
         <ol>
-            <li>Прогрев не помогает. <blockquote>Оплата улыбкой чуть-чуть увеличивает жизнь</blockquote></li>
-            <li>Дать карте отлежаться 7 дней, только что созданные карты не использовать. В ином случае будет МНОЖЕСТВО блокировок и проверок.</li>
+            <li>Прогрев помогает. <blockquote>Оплата улыбкой увеличивает жизнь</blockquote>
+            Дать карте отлежаться 7 дней, только что созданные карты не использовать. В ином случае будет МНОЖЕСТВО блокировок и проверок.</li>
             <li>Уменьшить количество транзакций, путей увеличения среднего чека.
                 <blockquote>То есть вместо 10 переводов по 1000, лучше сделать 1 перевод на 10к руб.</blockquote>
                 Или
@@ -140,5 +130,19 @@
     <footer>
         <p>&copy; 2025 XCrypto by LaFTon</p>
     </footer>
+
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let WebApp = window.Telegram.WebApp;
+        let BackButton = WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            BackButton.hide();
+        });
+        WebApp.onEvent('backButtonClicked', function() {
+            window.history.back();
+        });
+    </script>
+
 </body>
 </html>
