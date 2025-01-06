@@ -15,6 +15,18 @@
             color: #ff6347;
         }
     </style>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let WebApp = window.Telegram.WebApp;
+        let BackButton = WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            BackButton.hide();
+        });
+        WebApp.onEvent('backButtonClicked', function() {
+            window.history.back();
+        });
+    </script>
 </head>
 <body class="dark-theme">
     <header>Альфа Банк</header>
@@ -60,18 +72,5 @@
     <footer>
         <p>&copy; 2025 XCrypto by LaFTon</p>
     </footer>
-
-    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <script>
-        let WebApp = window.Telegram.WebApp;
-        let BackButton = WebApp.BackButton;
-        BackButton.show();
-        BackButton.onClick(function() {
-            BackButton.hide();
-        });
-        WebApp.onEvent('backButtonClicked', function() {
-            window.history.back();
-        });
-    </script>
 </body>
 </html>
