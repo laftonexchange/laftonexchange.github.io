@@ -115,31 +115,6 @@ footer {
             animation: headerGlow 5s infinite linear;
         }
 
-        .container {
-            width: calc(100% - 60px);
-            max-width: 800px;
-            margin: 30px auto;
-            background: #222;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .card-section {
-            margin-bottom: 20px;
-        }
-
-        .card-section b {
-            font-size: 1.5em;
-            color: #00bfff;
-            text-shadow: 0 0 5px #00bfff, 0 0 10px #6a0dad;
-        }
-
-        .card-section i {
-            font-size: 1.2em;
-            color: #ff0080;
-        }
-
         /* Keyframes for animations */
         @keyframes backgroundShift {
             0% {
