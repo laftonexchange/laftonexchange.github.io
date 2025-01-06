@@ -66,76 +66,74 @@ footer {
     color: #aaa;
 }
 
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--highlight-color);
-            color: var(--text-color-light);
-            border: 1px solid var(--highlight-border);
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: all 0.3s ease-in-out;
-        }
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--highlight-color);
+    color: var(--text-color-light);
+    border: 1px solid var(--highlight-border);
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+}
 
-        .dark-theme {
-            background-color: var(--bg-color-dark);
-            color: var(--text-color-dark);
-        }
+.dark-theme {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
 
-        .dark-theme blockquote {
-            background-color: #333;
-            color: var(--text-color-dark);
-        }
+.dark-theme blockquote {
+    background-color: #333;
+    color: var(--text-color-dark);
+}
 
-        .dark-theme .theme-toggle {
-            background-color: var(--highlight-border);
-            color: var(--text-color-dark);
-        }
+.dark-theme .theme-toggle {
+    background-color: var(--highlight-border);
+    color: var(--text-color-dark);
+}
 
+header {
+    background: linear-gradient(90deg, #00bfff, #6a0dad, #ff0080);
+    background-size: 200% 200%;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 5px #00bfff,
+        0 0 10px #00bfff,
+        0 0 20px #6a0dad,
+        0 0 30px #ff0080,
+        0 0 40px #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    animation: headerGlow 5s infinite linear;
+}
 
-        header {
-            background: linear-gradient(90deg, #00bfff, #6a0dad, #ff0080);
-            background-size: 200% 200%;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 2.2em;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-shadow:
-                0 0 5px #00bfff,
-                0 0 10px #00bfff,
-                0 0 20px #6a0dad,
-                0 0 30px #ff0080,
-                0 0 40px #ffffff;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-            animation: headerGlow 5s infinite linear;
-        }
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-        /* Keyframes for animations */
-        @keyframes backgroundShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes headerGlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+@keyframes headerGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
