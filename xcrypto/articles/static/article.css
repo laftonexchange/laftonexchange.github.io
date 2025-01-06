@@ -243,3 +243,25 @@ footer .nav-button {
         font-size: 0.8em;
     }
 }
+
+a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #3498db; /* Цвет текста ссылки */
+    font-weight: 500; /* Средний вес шрифта */
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавный переход для цвета и трансформации */
+}
+
+a:hover {
+    color: #e74c3c; /* Цвет текста при наведении */
+    transform: translateY(-3px); /* Легкое поднятие ссылки */
+}
+
+a:active {
+    color: #2980b9; /* Цвет текста при нажатии */
+    transform: translateY(1px); /* Небольшое опускание */
+}
+
+a:focus {
+    outline: none; /* Убираем стандартное обводку фокуса */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8); /* Легкая тень вокруг ссылки */
+}
