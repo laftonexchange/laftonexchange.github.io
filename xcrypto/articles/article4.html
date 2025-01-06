@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCrypto</title>
+    <link rel="stylesheet" href="https://laftonexchange.github.io/xcrypto/articles/static/article.css">
+    <style>
+        .spoiler-content {
+            display: none;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            padding: 0 15px;
+            transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+            background-color: #333;
+            color: var(--text-color-dark);
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .spoiler-button {
+            color: #f9e4ed;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 8px 15px;
+            background-color: transparent;
+            border: 1px solid #f9e4ed;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .spoiler-button:hover {
+            color: #ffffff;
+            background-color: #f9e4ed;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .spoiler-button:active {
+            transform: scale(0.95);
+        }
+
+        .spoiler.active .spoiler-content {
+            display: block;
+            max-height: 500px; /* Максимальная высота при раскрытии */
+            opacity: 1;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <header>МТС Банк</header>
+    <div class="container">
+        <blockquote>Оставайтесь на линии, скоро вам ответит специалист</blockquote>
+
+        <p>Это МТС Банк</p>
+
+        <div class="card-section">
+            <b>Прогрев</b>
+            <ol>
+                <li>Кладем деньги на карту и покупаем что угодно в интернете или в магазинах. Еду, вещи, киношку оплачиваем и тд (хотя бы 1к)</li>
+                <li>После прогревочного дня (можно 2 дня) оплачиваем связь у любого оператора.</li>
+            </ol>
+            <p>Здесь важен прогрев, ведь от него зависит срок жизни карты.</p>
+        </div>
+
+        <div class="card-section">
+            <b>Лимиты</b>
+            <ul>
+                <li>СБП: 1.500.000 месяц + 0.5%</li>
+                <li>Межбанк: Нет</li>
+            </ul>
+        </div>
+
+        <div class="card-section">
+            <b>Как снять деньги при блокировке?</b>
+            <ol>
+                <li>Легкий:<br>Через отделение банка (или отделение сотового оператора МТС) снятие наличных с комиссией 10%</li>
+                <li>Перевод по реквизитам, но с ожиданием 45 дней, но без комиссии.</li>
+            </ol>
+            <p>Есть более долгий, но изысканный вариант:)</p>
+            <div class="spoiler">
+                <button class="spoiler-button">Читать...</button>
+                <div class="spoiler-content">
+                    <p>Идем в Пятерочку, берем товар любой, идем на кассу к живому сотруднику и просим снять наличные, то есть к чеку дополнительно добавляем еще сумму. (до 5.000, кратную 100).</p>
+                    <p>Оплачиваем картой, и кассир выдает запрошенную сумму из кассы.</p>
+                    <p>Плюс данного способа, что он прогревает карту и засчитывается, как обычная покупка, что разрешено в МТС Деньгах при блокировке.</p>
+                    <p>Лимиты составляют 5 тысяч в сутки и 30 тысяч в месяц на одну карту.</p>
+                    <p>Работает в магазинах сети Х5 и на некоторых заправках.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-section">
+            <b>Советы</b>
+            <ul>
+                <li>Не стоит переводить МТС Деньги-МТС Деньги</li>
+                <li>Это один из немногих банков, которому без разницы на количество переводов. Это наилучший вариант для мелких платежей по 500 рублей.</li>
+                <li>Избегайте платежей на Visa и Mastercard</li>
+                <li>Сим карта для СБП должна быть чистая</li>
+                <li>Перед прогревом дайте отлежаться пару дней.</li>
+                <li>Не стоит переводить большие суммы.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 XCrypto by LaFTon</p>
+    </footer>
+
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let WebApp = window.Telegram.WebApp;
+        let BackButton = WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            BackButton.hide();
+        });
+        WebApp.onEvent('backButtonClicked', function() {
+            window.history.back();
+        });
+    </script>
+    <script>
+        document.querySelector('.spoiler-button').addEventListener('click', function() {
+            const spoiler = document.querySelector('.spoiler');
+            spoiler.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

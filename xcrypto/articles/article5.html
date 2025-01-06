@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCrypto</title>
+    <link rel="stylesheet" href="https://laftonexchange.github.io/xcrypto/articles/static/article.css">
+    <style>
+        .link {
+            color: #1e90ff;
+        }
+
+        .highlight-text {
+            font-weight: bold;
+            color: #ff6347;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <header>Безопасность</header>
+    <div class="container">
+        <div>
+            Сегодня разберем то, как вам защищаться от "грязных" денег.
+        </div>
+
+        <div>
+            <b>1) Просите комментарий к переводу:</b>
+            <blockquote>Сделка в КБ [номер сделки буез #]. Претензий не имею.</blockquote>
+            <blockquote>Сделка в Крипто боте [номер сделки без #]. Претензий не имею.</blockquote>
+
+            Как банки относятся к данным комментариям?
+            <blockquote>Комментарий точно не повредит, он никак не влияет на жизнь банка (Если вы <b class="highlight-text">НЕ используете</b> OZON или Альфа банки)</blockquote>
+
+            Некоторые продавцы просят указать в комментариях "Возврат долга", "Подарок" и тп, но это:
+            <ol>
+                <li>Не освобождает от уплаты налогов</li>
+                <li>Если таких переводов много, то ФНС может начать слежку и посчитать, что вы скрываете свои доходы.</li>
+            </ol>
+
+            <b>2) Просите многозадачность или запись экрана/видео, но смотрите и проверяйте внимательно, тк это может быть фотошоп</b>
+
+            <b>3) </b>Если вам скинули <b>PDF чек</b>, то проверьте, чтобы все данные сходились и размер файла был схожим с значениями внизу
+            <blockquote>
+                - Сбербанк: по номеру карты / СБП 50 KB <br>
+                - По номеру счёта: 54-60 KB <br>
+                - Райффазен Банк: 45 KB <br>
+                - Т-Банк: 56 KB <br>
+                - Альфа банк: 58 KB <br>
+                - ПСБ: 248 KB <br>
+                - Уралсиб: 25 KB <br>
+                - Газпром: 160 KB <br>
+                - OZON банк: 64 KB <br>
+                - ОТП: 66 KB <br>
+                - МКБ: 27 KB <br>
+                - ВТБ: 10 KB
+            </blockquote>
+
+            Но помните, что PDF чек <b>не</b> <b>дает гарантии</b>, что перевод был и он не от третьего лица.
+
+            <b>4) </b>Если вам сделали перевод по СБП, вы можете позвонить человеку, который перевел и задать вопрос, <b>знает ли он/она, за что мне перевел/а N рублей</b>.
+
+            <a href="https://t.me/+NbZgxYStNS43YWZi" class="link">Здесь</a> собраны некоторые советы от пользователей/модераторов Crypto Bot [пополняются]
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 XCrypto by LaFTon</p>
+    </footer>
+
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script>
+        let WebApp = window.Telegram.WebApp;
+        let BackButton = WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            BackButton.hide();
+        });
+        WebApp.onEvent('backButtonClicked', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
