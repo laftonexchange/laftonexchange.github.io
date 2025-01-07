@@ -136,6 +136,52 @@
     <script>
         let tg = window.Telegram.WebApp;
     </script>
+    <script>
+        const startAppRoutes = {
+            'bank': 'https://laftonexchange.github.io/xcrypto/articles/article1.html',
+            'sberbank': 'https://laftonexchange.github.io/xcrypto/articles/article2.html',
+            'raiffeisen': 'https://laftonexchange.github.io/xcrypto/articles/article3.html',
+            'mts': 'https://laftonexchange.github.io/xcrypto/articles/article4.html',
+            'security': 'https://laftonexchange.github.io/xcrypto/articles/article5.html',
+            'alfa': 'https://laftonexchange.github.io/xcrypto/articles/article6.html',
+            'alfa-manual': 'https://laftonexchange.github.io/xcrypto/articles/article7.html',
+            'yandex': 'https://laftonexchange.github.io/xcrypto/articles/article8.html',
+            'uralsib': 'https://laftonexchange.github.io/xcrypto/articles/article9.html',
+            'tbank': 'https://laftonexchange.github.io/xcrypto/articles/article10.html',
+            'tbank-ukbo': 'https://laftonexchange.github.io/xcrypto/articles/article11.html',
+            'tbank-manual': 'https://laftonexchange.github.io/xcrypto/articles/article12.html',
+            'taxes': 'https://laftonexchange.github.io/xcrypto/articles/article13.html',
+            'drop': 'https://laftonexchange.github.io/xcrypto/articles/article14.html',
+            '115': 'https://laftonexchange.github.io/xcrypto/articles/article15.html'
+        };
+
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            for (const [key, value] of urlParams.entries()) {
+                params[key] = value;
+            }
+            console.log("Query Parameters:", params);
+            return params;
+        }
+
+        function handleRedirect() {
+            const params = getQueryParams();
+            const tgWebAppStartParam = params['tgWebAppStartParam'];
+
+            console.log("tgWebAppStartParam:", tgWebAppStartParam);
+
+            if (tgWebAppStartParam && startAppRoutes[tgWebAppStartParam]) {
+                // Если параметр есть в маршрутах, редиректим
+                console.log("Redirecting to:", startAppRoutes[tgWebAppStartParam]);
+                window.location.href = startAppRoutes[tgWebAppStartParam];
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', handleRedirect);
+    </script>
+
 </head>
 <body>
     <header>XCrypto</header>
