@@ -84,6 +84,76 @@
             font-size: 1.1em;
             margin: 10px 0;
         }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #6a0dad;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #5e0090;
+        }
+
+        /* Медиазапросы для мобильных устройств */
+        @media screen and (max-width: 768px) {
+            header {
+                font-size: 1.8em;
+                padding: 20px;
+            }
+
+            .container {
+                padding: 15px;
+                margin: 10px;
+                max-width: 100%;
+            }
+
+            h2, h3 {
+                font-size: 1.6em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 25px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Для очень маленьких экранов, например, телефонов в портретном режиме */
+        @media screen and (max-width: 480px) {
+            header {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+
+            .container {
+                padding: 10px;
+                margin: 5px;
+            }
+
+            h2, h3 {
+                font-size: 1.4em;
+            }
+
+            .cta-button {
+                font-size: 0.9em;
+                padding: 8px 20px;
+                width: 100%;
+            }
+
+            footer {
+                font-size: 0.8em;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
