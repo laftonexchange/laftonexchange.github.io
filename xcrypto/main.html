@@ -189,7 +189,7 @@
             if (typeof Telegram !== "undefined" && Telegram.WebApp) {
                 Telegram.WebApp.getUser().then(user => {
                     const userId = user.id;
-                    const validIDs = [123456]; // Здесь можно добавить допустимые ID
+                    const validIDs = [7919628682, 256365981]; // Здесь можно добавить допустимые ID
                     if (validIDs.includes(userId)) {
                         handleRedirect();
                     } else {
