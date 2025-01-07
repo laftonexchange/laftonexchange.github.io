@@ -133,7 +133,38 @@
         }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-    <script>let WebApp = window.Telegram.WebApp;</script>
+    <script>
+        let tg = window.Telegram.WebApp;
+
+        tg.ready();
+
+        const startAppRoutes = {
+            '': 'https://laftonexchange.github.io/xcrypto/main.html',
+            'bank': 'https://laftonexchange.github.io/xcrypto/articles/article1.html',
+            'sberbank': 'https://laftonexchange.github.io/xcrypto/articles/article2.html',
+            'raiffeisen': 'https://laftonexchange.github.io/xcrypto/articles/article3.html',
+            'mts': 'https://laftonexchange.github.io/xcrypto/articles/article4.html',
+            'security': 'https://laftonexchange.github.io/xcrypto/articles/article5.html',
+            'alfa': 'https://laftonexchange.github.io/xcrypto/articles/article6.html',
+            'alfa-manual': 'https://laftonexchange.github.io/xcrypto/articles/article7.html',
+            'yandex': 'https://laftonexchange.github.io/xcrypto/articles/article8.html',
+            'uralsib': 'https://laftonexchange.github.io/xcrypto/articles/article9.html',
+            'tbank': 'https://laftonexchange.github.io/xcrypto/articles/article10.html',
+            'tbank-ukbo': 'https://laftonexchange.github.io/xcrypto/articles/article11.html',
+            'tbank-manual': 'https://laftonexchange.github.io/xcrypto/articles/article12.html',
+            'taxes': 'https://laftonexchange.github.io/xcrypto/articles/article13.html',
+            'drop': 'https://laftonexchange.github.io/xcrypto/articles/article14.html',
+            '115': 'https://laftonexchange.github.io/xcrypto/articles/article15.html'
+        };
+
+        function checkStartApp() {
+            const params = tg.initDataUnsafe.startParam || '';
+            const route = startAppRoutes[params] || startAppRoutes['unknown'];
+            window.location.href = route;
+        }
+
+        document.addEventListener('DOMContentLoaded', checkStartApp);
+    </script>
 </head>
 <body>
     <header>XCrypto</header>
