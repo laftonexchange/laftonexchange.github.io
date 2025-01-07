@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="XCrypto - Ваш гид в мир P2P и криптовалют.">
-    <meta name="keywords" content="cryptocurrency, P2P арбитраж, P2P, Арбитраж, XCrypto, crypto exchange">
-    <meta property="og:title" content="XCrypto">
-    <meta property="og:description" content="Ваш гид в мир P2P и криптовалют.">
+    <meta name="description" content="XCrypto by LaFTon - Your guide to crypto P2P arbitrage.">
+    <meta name="keywords" content="cryptocurrency, P2P arbitrage, XCrypto, crypto exchange">
+    <meta property="og:title" content="XCrypto by LaFTon">
+    <meta property="og:description" content="Your guide to crypto P2P arbitrage.">
+    <meta property="og:image" content="image_url_here">
+    <meta property="og:url" content="https://laftonexchange.github.io/xcrypto">
     <title>XCrypto</title>
     <style>
         body {
@@ -180,37 +182,28 @@
 
             if (tgWebAppStartParam && startAppRoutes[tgWebAppStartParam]) {
                 window.location.href = startAppRoutes[tgWebAppStartParam];
-            } else {
-                // Перенаправление на страницу по умолчанию, если параметр не найден
-                window.location.href = "https://laftonexchange.github.io/xcrypto/default.html";
             }
         }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        checkTelegramMiniApp();
-    });
-    
-    function checkTelegramMiniApp() {
-        if (typeof Telegram !== "undefined" && Telegram.WebApp) {
-            const webApp = Telegram.WebApp;
-            const user = webApp.initDataUnsafe;
-    
-            if (user && user.user) {
-                const userId = user.user.id;
-                const validIDs = [256365981]; // Список допустимых Telegram ID
-    
-                if (validIDs.includes(userId)) {
-                    handleRedirect();
-                } else {
+        function checkTelegramMiniApp() {
+            if (typeof Telegram !== "undefined" && Telegram.WebApp) {
+                Telegram.WebApp.getUser().then(user => {
+                    const userId = user.id;
+                    const validIDs = [123456]; // Здесь можно добавить допустимые ID
+                    if (validIDs.includes(userId)) {
+                        handleRedirect();
+                    } else {
+                        window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
+                    }
+                }).catch(err => {
                     window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
-                }
+                });
             } else {
                 window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
             }
-        } else {
-            window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
         }
-    }
+
+        document.addEventListener('DOMContentLoaded', checkTelegramMiniApp);
     </script>
 </head>
 <body>
