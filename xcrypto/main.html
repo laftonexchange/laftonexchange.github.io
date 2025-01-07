@@ -137,6 +137,8 @@
         let tg = window.Telegram.WebApp;
     </script>
     <script>
+        const validIDs = ["123456", "654321", "987654"];
+
         const startAppRoutes = {
             'bank': 'https://laftonexchange.github.io/xcrypto/articles/article1.html',
             'sberbank': 'https://laftonexchange.github.io/xcrypto/articles/article2.html',
@@ -176,13 +178,28 @@
             console.log("tgWebAppStartParam:", tgWebAppStartParam);
 
             if (tgWebAppStartParam && startAppRoutes[tgWebAppStartParam]) {
-                // Если параметр есть в маршрутах, редиректим
-                console.log("Redirecting to:", startAppRoutes[tgWebAppStartParam]);
                 window.location.href = startAppRoutes[tgWebAppStartParam];
             }
         }
 
-        document.addEventListener('DOMContentLoaded', handleRedirect);
+        function checkTelegramMiniApp() {
+            if (typeof Telegram !== "undefined" && Telegram.WebApp) {
+                Telegram.WebApp.getUser().then(user => {
+                    const userId = user.id;
+                    if (validIDs.includes(userId.toString())) {
+                        handleRedirect();
+                    } else {
+                        window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
+                    }
+                }).catch(err => {
+                    window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
+                });
+            } else {
+                window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkTelegramMiniApp);
     </script>
 
 </head>
