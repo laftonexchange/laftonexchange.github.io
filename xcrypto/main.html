@@ -186,25 +186,33 @@
             }
         }
 
-        function checkTelegramMiniApp() {
-            if (typeof Telegram !== "undefined" && Telegram.WebApp) {
-                Telegram.WebApp.getUser().then(user => {
-                    const userId = user.id;
-                    const validIDs = [123456]; // Здесь можно добавить допустимые ID
-                    if (validIDs.includes(userId)) {
-                        handleRedirect();
-                    } else {
-                        window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
-                    }
-                }).catch(err => {
+    document.addEventListener('DOMContentLoaded', function() {
+        checkTelegramMiniApp();
+    });
+    
+    function checkTelegramMiniApp() {
+        if (typeof Telegram !== "undefined" && Telegram.WebApp) {
+            const webApp = Telegram.WebApp;
+            const user = webApp.initDataUnsafe;
+    
+            if (user && user.user) {
+                const userId = user.user.id;
+                const validIDs = [123456]; // Список допустимых ID пользователей
+    
+                if (validIDs.includes(userId)) {
+                    handleRedirect();
+                } else {
                     window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
-                });
+                }
             } else {
+                // Если данные пользователя не доступны, можно перенаправить на другую страницу
                 window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
             }
+        } else {
+            // Если Telegram WebApp не доступен
+            window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
         }
-
-        document.addEventListener('DOMContentLoaded', checkTelegramMiniApp);
+    }
     </script>
 </head>
 <body>
