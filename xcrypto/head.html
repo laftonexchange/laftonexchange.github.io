@@ -6,28 +6,24 @@
     <title>XCrypto</title>
     <link rel="stylesheet" href="https://laftonexchange.github.io/xcrypto/articles/static/article.css">
     <style>
-        :root {
-            --bg-color-dark: #1e1e1e;
-            --text-color-light: #ffffff;
-            --highlight-color: #f9e4ed;
-            --highlight-border: #e5b4cc;
-            --font-family: "Arial", sans-serif;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-family);
-            background-color: var(--bg-color-dark);
-            color: var(--text-color-light);
-            line-height: 1.6;
+        /* Стили для header */
+        header {
+            height: 10vh; /* Увеличена высота */
+            background: linear-gradient(90deg, #00bfff, #6a0dad, #ff0080); /* Градиентный фон */
+            background-size: 200% 200%; /* Фон будет двигаться */
+            color: white; /* Цвет текста */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            justify-content: center; /* Центрирование текста по горизонтали */
+            align-items: center; /* Центрирование текста по вертикали */
+            font-size: 3em; /* Размер шрифта */
+            font-weight: bold; /* Жирный текст */
+            text-transform: uppercase; /* Преобразуем в верхний регистр */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Тень для текста */
+            animation: backgroundShift 5s ease infinite; /* Анимация для фона */
         }
 
-        @keyframes headerGlow {
+        /* Анимация для фона */
+        @keyframes backgroundShift {
             0% {
                 background-position: 0% 50%;
             }
@@ -36,149 +32,6 @@
             }
             100% {
                 background-position: 0% 50%;
-            }
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            background-color: #2b2b2b;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        h2, h3 {
-            color: #f9e4ed;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
-            color: #aaa;
-            width: 100%;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-            width: 100%;
-        }
-
-        a:hover {
-            color: #e74c3c;
-        }
-
-        blockquote {
-            margin: 10px 0;
-            padding: 10px 15px;
-            background-color: var(--highlight-color);
-            border-left: 5px solid var(--highlight-border);
-            border-radius: 5px;
-            font-size: 1em;
-            color: var(--text-color-light);
-        }
-
-        .features {
-            margin-top: 20px;
-        }
-
-        .features ul {
-            padding-left: 20px;
-        }
-
-        .features li {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #6a0dad;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-top: 15px;
-            text-align: center;
-            width: 100%; /* Ограничим ширину кнопки контейнером */
-            box-sizing: border-box; /* Убедимся, что padding не влияет на размер кнопки */
-        }
-
-        .cta-button:hover {
-            background-color: #5e0090;
-        }
-
-        /* Медиазапросы для мобильных устройств */
-        @media screen and (max-width: 768px) {
-            header {
-                font-size: 3.3em;
-                padding: 20px;
-            }
-
-            .container {
-                padding: 15px;
-                margin: 10px;
-                max-width: 100%;
-            }
-
-            h2, h3 {
-                font-size: 1.6em;
-            }
-
-            .cta-button {
-                display: inline-block;
-                padding: 10px 25px;
-                background-color: #6a0dad;
-                color: white;
-                text-decoration: none;
-                font-size: 1em;
-                font-weight: bold;
-                border-radius: 8px;
-                margin-top: 15px;
-                text-align: center;
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            header {
-                font-size: 3em;
-                padding: 15px;
-            }
-
-            .container {
-                padding: 10px;
-                margin: 5px;
-            }
-
-            h2, h3 {
-                font-size: 1.4em;
-            }
-
-            .cta-button {
-                display: inline-block;
-                padding: 8px 20px;
-                background-color: #6a0dad;
-                color: white;
-                text-decoration: none;
-                font-size: 0.9em;
-                font-weight: bold;
-                border-radius: 8px;
-                margin-top: 15px;
-                text-align: center;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            footer {
-                font-size: 0.8em;
-                padding: 10px;
             }
         }
     </style>
