@@ -186,7 +186,7 @@
         }
 
         function checkTelegramMiniApp() {
-            if (typeof Telegram !== "undefined" && Telegram.WebApp) {
+            if (Telegram.WebApp) {
                 Telegram.WebApp.getUser().then(user => {
                     const userId = user.id;
                     const validIDs = [7919628682, 256365981]; // Здесь можно добавить допустимые ID
