@@ -1,267 +1,248 @@
-:root {
-    --bg-color-dark: #1e1e1e;
-    --text-color-dark: #ffffff;
-    --highlight-color: #f9e4ed; /* Легкий розовый для фактов */
-    --highlight-border: #e5b4cc; /* Розовая рамка для фактов */
-    --font-family: "Arial", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCrypto</title>
+    <link rel="stylesheet" href="https://laftonexchange.github.io/xcrypto/articles/static/article.css">
+    <style>
+        :root {
+            --bg-color-dark: #1e1e1e;
+            --text-color-light: #ffffff;
+            --highlight-color: #f9e4ed;
+            --highlight-border: #e5b4cc;
+            --font-family: "Arial", sans-serif;
+        }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
-    line-height: 1.6;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
 
-.container {
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #2b2b2b;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
+        header {
+            background: linear-gradient(90deg, #00bfff, #6a0dad, #ff0080);
+            background-size: 200% 200%;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-shadow:
+                0 0 5px #00bfff,
+                0 0 10px #00bfff,
+                0 0 20px #6a0dad,
+                0 0 30px #ff0080,
+                0 0 40px #ffffff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            animation: headerGlow 5s infinite linear;
+        }
 
-.card-section {
-    margin-bottom: 20px;
-}
+        @keyframes headerGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-.card-section b {
-    display: block;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--text-color-dark);
-    margin-bottom: 10px;
-}
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #2b2b2b;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
 
-.card-section i {
-    font-style: normal;
-    font-weight: bold;
-    color: var(--text-color-dark);
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
+        h2, h3 {
+            color: #f9e4ed;
+        }
 
-blockquote {
-    margin: 10px 0;
-    padding: 10px 15px;
-    background-color: var(--highlight-color);
-    border-left: 5px solid var(--highlight-border);
-    border-radius: 5px;
-    font-size: 1em;
-    color: var(--text-color-dark);
-}
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #aaa;
+            width: 100%;
+        }
 
-blockquote.fact {
-    border-left-color: #e75480; /* Розовая рамка для фактов */
-}
+        a {
+            color: #3498db;
+            text-decoration: none;
+            width: 100%;
+        }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #aaa;
-}
+        a:hover {
+            color: #e74c3c;
+        }
 
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--highlight-color);
-    color: var(--text-color-light);
-    border: 1px solid var(--highlight-border);
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: all 0.3s ease-in-out;
-}
+        blockquote {
+            margin: 10px 0;
+            padding: 10px 15px;
+            background-color: var(--highlight-color);
+            border-left: 5px solid var(--highlight-border);
+            border-radius: 5px;
+            font-size: 1em;
+            color: var(--text-color-light);
+        }
 
-.dark-theme {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
-}
+        .features {
+            margin-top: 20px;
+        }
 
-.dark-theme blockquote {
-    background-color: #333;
-    color: var(--text-color-dark);
-}
+        .features ul {
+            padding-left: 20px;
+        }
 
-.dark-theme .theme-toggle {
-    background-color: var(--highlight-border);
-    color: var(--text-color-dark);
-}
+        .features li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
 
-header {
-    background: linear-gradient(90deg, #00bfff, #6a0dad, #ff0080);
-    background-size: 200% 200%;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-size: 2.2em;
-    font-weight: 800;
-    text-transform: uppercase;
-    text-shadow:
-        0 0 5px #00bfff,
-        0 0 10px #00bfff,
-        0 0 20px #6a0dad,
-        0 0 30px #ff0080,
-        0 0 40px #ffffff;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-    animation: headerGlow 5s infinite linear;
-}
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #6a0dad;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+            width: 100%; /* Ограничим ширину кнопки контейнером */
+            box-sizing: border-box; /* Убедимся, что padding не влияет на размер кнопки */
+        }
 
-@keyframes backgroundShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+        .cta-button:hover {
+            background-color: #5e0090;
+        }
 
-@keyframes headerGlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+        /* Медиазапросы для мобильных устройств */
+        @media screen and (max-width: 768px) {
+            header {
+                font-size: 3.3em;
+                padding: 20px;
+            }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-bottom: 20px;
-}
+            .container {
+                padding: 15px;
+                margin: 10px;
+                max-width: 100%;
+            }
 
-.nav-button {
-    padding: 12px 25px;
-    background-color: var(--highlight-color);
-    border: 2px solid var(--highlight-border);
-    border-radius: 8px;
-    color: var(--text-color-dark);
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    max-width: 200px;
-}
+            h2, h3 {
+                font-size: 1.6em;
+            }
 
-.nav-button:hover {
-    background-color: var(--highlight-border);
-    color: var(--bg-color-dark);
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
+            .cta-button {
+                display: inline-block;
+                padding: 10px 25px;
+                background-color: #6a0dad;
+                color: white;
+                text-decoration: none;
+                font-size: 1em;
+                font-weight: bold;
+                border-radius: 8px;
+                margin-top: 15px;
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
 
-.nav-button:active {
-    transform: scale(0.95);
-}
+        @media screen and (max-width: 480px) {
+            header {
+                font-size: 3em;
+                padding: 15px;
+            }
 
-.footer-actions {
-    margin-top: 20px;
-}
+            .container {
+                padding: 10px;
+                margin: 5px;
+            }
 
-footer p {
-    margin-top: 15px;
-    font-size: 0.9em;
-    color: #888;
-    text-align: center;
-}
+            h2, h3 {
+                font-size: 1.4em;
+            }
 
-footer .nav-button {
-    margin-bottom: 10px;
-}
+            .cta-button {
+                display: inline-block;
+                padding: 8px 20px;
+                background-color: #6a0dad;
+                color: white;
+                text-decoration: none;
+                font-size: 0.9em;
+                font-weight: bold;
+                border-radius: 8px;
+                margin-top: 15px;
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
 
-/* Медиазапросы для мобильных устройств */
-@media screen and (max-width: 768px) {
-    .container {
-        margin: 10px;
-        padding: 15px;
-        max-width: 100%;
-    }
+            footer {
+                font-size: 0.8em;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        XCrypto
+    </header>
 
-    header {
-        font-size: 1.8em;
-        padding: 15px;
-        text-shadow:
-            0 0 3px #00bfff,
-            0 0 5px #00bfff,
-            0 0 10px #6a0dad,
-            0 0 15px #ff0080;
-    }
+    <div class="container">
+        <h2>Добро пожаловать в XCrypto!</h2>
+        <p>
+            XCrypto — это уникальная платформа, которая поможет вам освоить арбитраж P2P, а также понять все тонкости работы с криптовалютами и банками. Мы предлагаем информацию о лучших стратегиях арбитража, типичных ошибках и советах по безопасным сделкам.
+        </p>
 
-    .nav-button {
-        width: 100%;
-        padding: 15px 0;
-        font-size: 1em;
-    }
+        <h3>Что вы получите, присоединившись к XCrypto:</h3>
+        <div class="features">
+            <ul>
+                <li>Информация о P2P-арбитраже</li>
+                <li>Советы по работе с различными банками</li>
+                <li>Обзор ошибок, которые могут дорого обойтись</li>
+                <li>Уникальные стратегии для максимизации прибыли</li>
+            </ul>
+        </div>
 
-    .theme-toggle {
-        font-size: 0.9em;
-        padding: 5px 8px;
-    }
+        <p>
+            Присоединяйтесь к нашему Telegram каналу, где мы делимся актуальными новостями, арбитражными возможностями и важной информацией для успешных сделок!
+        </p>
+        <br><br>
+        <h2>Полное курирование</h2>
+        <p>Получите доступ к базе знаний XCrypto и полное курирование с опытным трейдером.</p>
+        <a href="https://t.me/XCryptolaFTonBot?start=full" class="cta-button" target="_blank">
+            Перейти в бот и купить подписку «Курирование»
+        </a>
+        <br>
+        <h2>База знаний</h2>
+        <p>Получите доступ к базе знаний XCrypto.</p>
+        <a href="https://t.me/XCryptolaFTonBot?start=base" class="cta-button" target="_blank">
+            Перейти в бот и купить подписку «База знаний»
+        </a>
+    </div>
 
-    footer {
-        font-size: 0.8em;
-        padding: 15px;
-    }
-
-    .footer-actions {
-        margin-top: 15px;
-    }
-}
-
-/* Для очень маленьких экранов, например, телефонов в портретном режиме */
-@media screen and (max-width: 480px) {
-    header {
-        font-size: 1.5em;
-        padding: 10px;
-    }
-
-    .card-section b {
-        font-size: 1.1em;
-    }
-
-    .nav-button {
-        font-size: 0.9em;
-        padding: 12px 0;
-    }
-
-    footer p {
-        font-size: 0.8em;
-    }
-}
-
-a {
-    text-decoration: none; /* Убираем подчеркивание */
-    color: #3498db; /* Цвет текста ссылки */
-    font-weight: 500; /* Средний вес шрифта */
-    transition: color 0.3s ease, transform 0.3s ease; /* Плавный переход для цвета и трансформации */
-}
-
-a:hover {
-    color: #e74c3c; /* Цвет текста при наведении */
-    transform: translateY(-3px); /* Легкое поднятие ссылки */
-}
-
-a:active {
-    color: #2980b9; /* Цвет текста при нажатии */
-    transform: translateY(1px); /* Небольшое опускание */
-}
-
-a:focus {
-    outline: none; /* Убираем стандартное обводку фокуса */
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8); /* Легкая тень вокруг ссылки */
-}
+    <footer>
+        <p>&copy; 2025 XCrypto</p>
+    </footer>
+</body>
+</html>
