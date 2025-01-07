@@ -137,8 +137,6 @@
         let tg = window.Telegram.WebApp;
     </script>
     <script>
-        const validIDs = ["123456", "654321", "987654"];
-
         const startAppRoutes = {
             'bank': 'https://laftonexchange.github.io/xcrypto/articles/article1.html',
             'sberbank': 'https://laftonexchange.github.io/xcrypto/articles/article2.html',
@@ -186,7 +184,8 @@
             if (typeof Telegram !== "undefined" && Telegram.WebApp) {
                 Telegram.WebApp.getUser().then(user => {
                     const userId = user.id;
-                    if (validIDs.includes(userId.toString())) {
+                    const validIDs = [123456];
+                    if (validIDs.includes(userId)) {
                         handleRedirect();
                     } else {
                         window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
