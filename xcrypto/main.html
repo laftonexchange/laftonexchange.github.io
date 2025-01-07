@@ -197,7 +197,7 @@
     
             if (user && user.user) {
                 const userId = user.user.id;
-                const validIDs = [123456]; // Список допустимых ID пользователей
+                const validIDs = [256365981]; // Список допустимых Telegram ID
     
                 if (validIDs.includes(userId)) {
                     handleRedirect();
@@ -205,11 +205,9 @@
                     window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
                 }
             } else {
-                // Если данные пользователя не доступны, можно перенаправить на другую страницу
                 window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
             }
         } else {
-            // Если Telegram WebApp не доступен
             window.location.href = "https://laftonexchange.github.io/xcrypto/head.html";
         }
     }
